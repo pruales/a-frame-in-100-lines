@@ -7,6 +7,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   let text: string | undefined = '';
 
   const body: FrameRequest = await req.json();
+  console.log('FrameRequest', body);
   const { isValid, message } = await getFrameMessage(body, { neynarApiKey: 'NEYNAR_ONCHAIN_KIT' });
 
   if (isValid) {

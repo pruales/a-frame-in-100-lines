@@ -10,6 +10,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   console.log('FrameRequest', body);
   const { isValid, message } = await getFrameMessage(body, { neynarApiKey: 'NEYNAR_ONCHAIN_KIT' });
 
+  console.log('isValid', isValid);
+  console.log('message', message);
+
   if (isValid) {
     accountAddress = message.interactor.verified_accounts[0];
   }
